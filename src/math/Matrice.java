@@ -19,4 +19,33 @@ public class Matrice {
             }
         }
     }
+
+    // Getteur 
+
+    public double[][] getTable(){
+        return this.table;
+    }
+
+    // Fonctions Mathématiques
+
+    //Addition
+
+    //Multiplication
+
+    //Déterminant
+
+    // toString 
+    @Override
+    public String toString() {
+        String texte = "[ ";
+
+        for(int i=0 ; i<table.length ; i++){
+            for(int j=0 ; j<table[0].length ; j++){
+                texte += Math.round(table[i][j]*10.0)/10.0 + " , ";
+            }
+        }
+
+        texte += "]";
+        return texte;
+    }
 }
