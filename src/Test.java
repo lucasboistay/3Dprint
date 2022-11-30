@@ -35,7 +35,10 @@ public class Test {
         m1.setAllTable(3);
         System.out.println(m1);
 
-        Matrice m2 = new Matrice(5,5);
+        Matrice m2 = m1.copy();
+
+
+        System.out.println(m2);
 
         m2.setAllTable(5);
         System.out.println(m2);
@@ -45,6 +48,11 @@ public class Test {
         m3.setAllTable(2);
         System.out.println(m3);
 
+        m2.additionMatrice(m1);
+        System.out.println(m2);
+
+        m2.additionMatrice(m3);
+        System.out.println(m2);
 
     }
 }    
