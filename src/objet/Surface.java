@@ -33,6 +33,4 @@ public class Surface {
         return nom+liste;
     }
 
-
-
 }
