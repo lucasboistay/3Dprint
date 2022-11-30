@@ -7,7 +7,7 @@ public class Test {
 
         System.out.println("Test des points :");
 
-        Point p = new Point(0, 0, 0);
+        Point p1 = new Point(0, 0, 0);
         Point p2 = new Point(3, 0, 3);
 
         System.out.println("On affiche le point P2 " + p2);
