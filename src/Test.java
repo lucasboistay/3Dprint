@@ -41,6 +41,7 @@ public class Test {
         System.out.println(m2);
 
         m2.setAllTable(5);
+        m2.setDiagonale(3);
         System.out.println(m2);
 
         Matrice m3 = new Matrice(6,5);

@@ -8,10 +8,21 @@ public class Matrice {
     }
 
     // Setteur
+
+    /**
+     * Set l'élemnent en position [x][y] a la valeur value
+     * @param x ligne
+     * @param y colonnes
+     * @param value valeur à donner
+     */
     public void setTable(int x, int y, double value){
         table[x][y] = value;
     }
 
+    /**
+     * Met tout les élements de la table à la même valeur value
+     * @param value
+     */
     public void setAllTable(double value){
         for(int i = 0 ; i<table.length ; i ++){
             for(int j = 0 ; j<table[0].length ; j++){
@@ -20,6 +31,12 @@ public class Matrice {
         }
     }
 
+
+    /**
+     * Set la diagonale de la matrice à la valeur value
+     * A FAIRE : GERER LE CAS OU X!=Y !
+     * @param value
+     */
     public void setDiagonale(double value){
         for(int i=0 ; i<table.length ; i++){
             setTable(i, i, value);
@@ -28,6 +45,10 @@ public class Matrice {
 
     // Getteur 
 
+    /**
+     * Renvoie la table de la matrice
+     * @return
+     */
     public double[][] getTable(){
         return this.table;
     }
