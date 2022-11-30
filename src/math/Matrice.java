@@ -7,7 +7,7 @@ public class Matrice {
         this.table = new double[x][y];
     }
 
-    // Setteur
+    // ---------------  Setteur --------------------
 
     /**
      * Set l'élemnent en position [x][y] a la valeur value
@@ -21,7 +21,7 @@ public class Matrice {
 
     /**
      * Met tout les élements de la table à la même valeur value
-     * @param value
+     * @param value valeur pour renplir le tableau
      */
     public void setAllTable(double value){
         for(int i = 0 ; i<table.length ; i ++){
@@ -32,10 +32,10 @@ public class Matrice {
     }
 
 
-    /**
+    /**A FAIRE : GERER LE CAS OU X!=Y !
+     * 
      * Set la diagonale de la matrice à la valeur value
-     * A FAIRE : GERER LE CAS OU X!=Y !
-     * @param value
+     * @param value valeur pour la diagonale
      */
     public void setDiagonale(double value){
         for(int i=0 ; i<table.length ; i++){
@@ -43,33 +43,17 @@ public class Matrice {
         }
     }
 
-    // Getteur 
+    // ---------------  Getteur  -------------------- 
 
     /**
      * Renvoie la table de la matrice
-     * @return
+     * @return table de la matrice
      */
     public double[][] getTable(){
         return this.table;
     }
 
-   /**
-    * Renvoie la copie de la matrice
-    * @return Matrice
-    */
-    public Matrice copy(){
-        Matrice m = new Matrice(table.length,table[0].length);
-
-        for(int i=0 ; i<table.length ; i++){
-            for (int j=0 ; j<table[0].length ; j++){
-                m.setTable(i, j, this.table[i][j]);
-            }
-        }
-
-        return m;
-    }
-
-    // Fonctions Mathématiques
+    // ---------------  Maths --------------------
 
     /**
      * Transform this en une matrice d'addition avec m
@@ -92,9 +76,22 @@ public class Matrice {
         return true;
     }
 
-    //Multiplication
+    /** A FAIRE
+     * 
+     * Multiplie this avec m pour donner une nouvelle fonction
+     * @param m Matrice à multiplier avec this
+     * @return true si multiplication possible, false sinon
+     */
+    public boolean multiplicationMatrice(Matrice m){return false;}
 
-    //Déterminant
+    /** A FAIRE
+     * 
+     * Pour trouver le determinant de la matrice
+     * @return le determinant
+     */
+    public double determinant(){return 0.0;}
+
+    // ---------------  Overrides --------------------
  
     @Override
     public String toString() {
@@ -113,4 +110,21 @@ public class Matrice {
         texte += "]";
         return texte;
     }
+
+     /**
+    * Renvoie la copie de la matrice
+    * @return Matrice this
+    */
+    public Matrice copy(){
+        Matrice m = new Matrice(table.length,table[0].length);
+
+        for(int i=0 ; i<table.length ; i++){
+            for (int j=0 ; j<table[0].length ; j++){
+                m.setTable(i, j, this.table[i][j]);
+            }
+        }
+
+        return m;
+    }
+
 }
