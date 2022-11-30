@@ -21,7 +21,9 @@ public class Matrice {
     }
 
     public void setDiagonale(double value){
-        
+        for(int i=0 ; i<table.length ; i++){
+            setTable(i, i, value);
+        }
     }
 
     // Getteur 
@@ -30,15 +32,49 @@ public class Matrice {
         return this.table;
     }
 
+   /**
+    * Renvoie la copie de la matrice
+    * @return Matrice
+    */
+    public Matrice copy(){
+        Matrice m = new Matrice(table.length,table[0].length);
+
+        for(int i=0 ; i<table.length ; i++){
+            for (int j=0 ; j<table[0].length ; j++){
+                m.setTable(i, j, this.table[i][j]);
+            }
+        }
+
+        return m;
+    }
+
     // Fonctions Mathématiques
 
-    //Addition
+    /**
+     * Transform this en une matrice d'addition avec m
+     * @param m Matrice de même taille que this
+     * @return true si addition possible, false sinon
+     */
+    public boolean additionMatrice(Matrice m){
+
+        if(m.getTable().length != table.length || m.getTable()[0].length != table[0].length){
+            System.out.println("Matrice de tailles différentes!");
+            return false;
+        }
+
+        for(int i=0 ; i<table.length ; i++){
+            for (int j=0 ; j<table[0].length ; j++){
+                this.setTable(i, j, table[i][j] + m.getTable()[i][j]);
+            }
+        }
+
+        return true;
+    }
 
     //Multiplication
 
     //Déterminant
-
-    // toString 
+ 
     @Override
     public String toString() {
         String texte = "[ ";

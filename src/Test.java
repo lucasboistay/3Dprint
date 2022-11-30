@@ -14,7 +14,7 @@ public class Test {
 
         System.out.println("Distance entre p et P2 " + p.distance(p2));
 
-        System.out.println("Test des surfaces");
+        System.out.println("\n\nTest des surfaces");
 
         Point p3 = new Point(4, 5);
 
@@ -28,10 +28,22 @@ public class Test {
 
         System.out.println("Affichage surface 1 : " + s);
 
-        Matrice m = new Matrice(5,5);
+        System.out.println("\n\nTest des Matrices :");
 
-        m.setAllTable(0);
-        System.out.println(m);
+        Matrice m1 = new Matrice(5,5);
+
+        m1.setAllTable(3);
+        System.out.println(m1);
+
+        Matrice m2 = new Matrice(5,5);
+
+        m2.setAllTable(5);
+        System.out.println(m2);
+
+        Matrice m3 = new Matrice(6,5);
+
+        m3.setAllTable(2);
+        System.out.println(m3);
 
 
     }
