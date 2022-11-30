@@ -1,7 +1,5 @@
-import javax.print.event.PrintJobListener;
-import javax.sound.midi.SysexMessage;
-
 import objet.*;
+import math.*;
 
 public class Test {
     public static void main(String[] args) throws Exception {
@@ -29,6 +27,11 @@ public class Test {
         s.ajoutePoint(p3);
 
         System.out.println("Affichage surface 1 : " + s);
+
+        Matrice m = new Matrice(5,5);
+
+        m.setAllTable(0);
+        System.out.println(m);
 
 
     }

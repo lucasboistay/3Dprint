@@ -20,6 +20,10 @@ public class Matrice {
         }
     }
 
+    public void setDiagonale(double value){
+        
+    }
+
     // Getteur 
 
     public double[][] getTable(){
@@ -40,9 +44,13 @@ public class Matrice {
         String texte = "[ ";
 
         for(int i=0 ; i<table.length ; i++){
+            if(i>0){
+                texte += "  ";
+            }
             for(int j=0 ; j<table[0].length ; j++){
                 texte += Math.round(table[i][j]*10.0)/10.0 + " , ";
             }
+            texte += "\n";
         }
 
         texte += "]";
