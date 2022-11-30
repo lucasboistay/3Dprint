@@ -1,6 +1,3 @@
-import javax.print.event.PrintJobListener;
-import javax.sound.midi.SysexMessage;
-
 import objet.*;
 
 public class Test {
