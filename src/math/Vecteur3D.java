@@ -1,6 +1,11 @@
-package objet;
+package math;
 
 public class Vecteur3D extends Vecteur{
+
+    public Vecteur3D(){
+        super(3);
+    }
+
     /**
      * Constructeur d'un vecteur 3D, prends les coordonnés.
      * @param x coordonné x
@@ -21,7 +26,7 @@ public class Vecteur3D extends Vecteur{
             System.out.println("ERREUR / Pas de la meme taille");
             return null;
         }
-        Vecteur3D resultat = new Vecteur3D(0, 0, 0);
+        Vecteur3D resultat = new Vecteur3D();
         double[] coords= new double[3];
         for(int i=0; i<3 ; i++){
             coords[i] = this.getCoordonnee()[i] + v.getCoordonnee()[i];
@@ -52,7 +57,7 @@ public class Vecteur3D extends Vecteur{
             System.out.println("ERREUR / Pas de la meme taille");
             return null;
         }
-        Vecteur3D resultat = new Vecteur3D(0, 0, 0);
+        Vecteur3D resultat = new Vecteur3D();
         double[] vfinal = new double[3];
         double[] v2 = v.getCoordonnee();
         double[] v1 = this.getCoordonnee();
