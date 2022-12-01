@@ -3,27 +3,35 @@ package objet;
 import math.Vecteur3D;
 
 public class Point3D {
-    private int x;
-    private int y;
-    private int z;
+    private double x;
+    private double y;
+    private double z;
 
-    public Point3D(int x, int y,int z){
+    public Point3D(double x, double y,double z){
         this.x = x;
         this.y = y;
         this.z = z;
     }
 
+    public Point3D(int x, int y,int z){
+        this((double)x,(double)y,(double)z);
+    }
+
+    public Point3D(){
+        this((int)Math.random()*10+1,(int)Math.random()*10+1,(int)Math.random()*10+1);
+    }
+
     //getteur
 
-    public int getX(){
+    public double getX(){
         return this.x;
     }
 
-    public int getY() {
+    public double getY() {
         return this.y;
     }
 
-    public int getZ(){
+    public double getZ(){
         return this.z;
     }
 
