@@ -48,17 +48,33 @@ public class Test {
         m2.setDiagonale(3);
         System.out.println(m2);
 
-        Matrice m3 = new Matrice(6,5);
+        Matrice m3 = new Matrice(5,2);
 
         m3.setAllTable(2);
-        System.out.println(m3);
+        System.out.println("M3 : " + m3);
 
         m2.additionMatrice(m1);
         System.out.println(m2);
 
         m2.additionMatrice(m3);
+        System.out.println("M2 : " + m2);
+
+        // M2 pas modifié car pas d'addition possible
+
+        System.out.println("Affichage Multiplication m3 et m2 : ");
+
+        m3.multiplicationMatrice(m2);
+        System.out.println(m3);
+
+        // M3 pas modifié car pas de multiplication possible
+
+        System.out.println("Affichage Multiplication m2 et m3 : ");
+
+        m2.multiplicationMatrice(m3);
         System.out.println(m2);
 
-        System.out.println("Affichage surface 1 : " + s);
+        // Affiche bien M2 x M3
+
+        
     }
 }    

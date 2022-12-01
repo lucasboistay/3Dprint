@@ -82,7 +82,22 @@ public class Matrice {
      * @param m Matrice à multiplier avec this
      * @return true si multiplication possible, false sinon
      */
-    public boolean multiplicationMatrice(Matrice m){return false;}
+    public boolean multiplicationMatrice(Matrice m){
+        if(this.table[0].length != m.getTable().length){
+            return false;
+        }
+
+        for (int i=0 ; i<this.table.length ; i++){
+            for (int j=0 ; j<m.getTable()[0].length ; j++){
+                double total = 0;
+                for (int k=0 ; k<table[0].length ; k++ ){
+                    total += table[i][k] * m.getTable()[k][j];
+                }
+                this.setTable(i, j, total);
+            }
+        }
+        return true;
+    }
 
     /** A FAIRE
      * 
