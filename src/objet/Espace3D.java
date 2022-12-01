@@ -6,7 +6,7 @@ import math.Vecteur3D;
 public class Espace3D {
     private static ArrayList<Objet3D> listeObjet;
     private static ArrayList<Vecteur3D> listeVecteur;
-    private static ArrayList<Point> listePoint;
+    private static ArrayList<Point3D> listePoint;
 
     public static final Espace3D INSTANCE = new Espace3D();
 
@@ -26,7 +26,7 @@ public class Espace3D {
         return listeObjet;
     }
 
-    public static ArrayList<Point> getListePoint() {
+    public static ArrayList<Point3D> getListePoint() {
         return listePoint;
     }
 
@@ -44,7 +44,7 @@ public class Espace3D {
         listeVecteur.add(v);
     } 
 
-    public static void addPoint(Point p){
+    public static void addPoint(Point3D p){
         listePoint.add(p);
     } 
 

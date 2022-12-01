@@ -1,11 +1,13 @@
 package objet;
 
-public class Point {
+import math.Vecteur3D;
+
+public class Point3D {
     private int x;
     private int y;
     private int z;
 
-    public Point(int x, int y,int z){
+    public Point3D(int x, int y,int z){
         this.x = x;
         this.y = y;
         this.z = z;
@@ -27,14 +29,17 @@ public class Point {
 
     // setteur
 
-    public void setPosition(int x, int y){
+    public void setPosition(int x, int y, int z){
         this.x = x;
         this.y = y;
+        this.z = z;
     }
 
     //
 
-    public double distance(Point p){
+    public Vecteur3D vecteurEntrePoints(Point3D p){return new Vecteur3D(p.getX() - this.getX() , p.getY() - this.getY() , p.getZ() - this.getZ());}
+
+    public double distance(Point3D p){
         return Math.sqrt(Math.pow(this.x - p.getX(),2) + Math.pow(this.y - p.getY(),2) + Math.pow(this.z - p.getZ(),2));
     }
 

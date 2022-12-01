@@ -1,4 +1,4 @@
-package objet;
+package math;
 
 public abstract class Vecteur {
     private double[] coordonnee;
@@ -41,6 +41,13 @@ public abstract class Vecteur {
      */
     public abstract Vecteur crossProduct(Vecteur v);
 
+    public double norme(){
+        return this.dotProduct(this);
+    }
+
+    public void normaliser(){
+        //TODO
+    }
     //toString
     @Override
     public String toString() {
