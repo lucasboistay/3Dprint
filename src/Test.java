@@ -162,9 +162,10 @@ public class Test {
         cube.addSurface(sHaut);
         cube.addSurface(sBas);
 
-        System.out.println(cube);
+        Espace3D espace = Espace3D.INSTANCE;
+        Espace3D.addObjet(cube);
 
-
+        System.out.println(espace);
         
     }
 }    

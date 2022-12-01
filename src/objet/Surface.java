@@ -45,6 +45,14 @@ public class Surface {
         Point3D a = listePoint.get(0);
         Point3D b = listePoint.get(1);
         Point3D c = listePoint.get(2);
+
+        Vecteur3D ab = a.vecteurEntrePoints(b);
+        Vecteur3D cb = c.vecteurEntrePoints(b);
+
+        Vecteur3D vNormal = ab.crossProduct(cb);
+        this.vecteurNormal = vNormal;
+        //TODO Vecteur non unitaire ! 
+
     }
 
     //toString
