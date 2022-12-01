@@ -75,6 +75,21 @@ public class Test {
 
         // Affiche bien M2 x M3
 
-        
+        System.out.println("\n\nTest determinant ");
+        Matrice m01 = new Matrice(2);
+        Matrice m02 = new Matrice(3);
+        Matrice m03 = new Matrice(4);
+
+        m01.setDiagonale(5);
+        m02.setAleaInt(-10, 10);
+        m03.setAleaInt(-10, 10);
+
+        System.out.println(m01);
+        System.out.println(m02);
+        System.out.println(m03);
+
+        System.out.println(m01.determinantCarre());
+        System.out.println(m02.determinantCarre());
+        System.out.println(m03.determinantCarre());
     }
 }    

@@ -6,6 +6,9 @@ public class Matrice {
     public Matrice(int x, int y){
         this.table = new double[x][y];
     }
+    public Matrice(int x){
+        this(x,x);
+    }
 
     // ---------------  Setteur --------------------
 
@@ -17,6 +20,19 @@ public class Matrice {
      */
     public void setTable(int x, int y, double value){
         table[x][y] = value;
+    }
+
+    /**
+     * Set toutes les valeurs de la matrice aléatoirement sur des int entre borneinf et bornesup
+     * @param borneinf minimum que peut atteindre une valeur dans la matrice
+     * @param bornesup Maximum que peut atteindre une valeur dans la matrice
+     */
+    public void setAleaInt(int borneinf,int bornesup){
+        for(int i =0 ; i<table.length ; i++){
+            for (int j=0 ; j<table[0].length ; j++){
+                table[i][j] = (int) (Math.random() * (bornesup-borneinf) + borneinf);
+            }
+        }
     }
 
     /**
@@ -43,6 +59,14 @@ public class Matrice {
         }
     }
 
+    /**
+     * Setteur de la ligne à l'index index
+     * @param index index à modifier
+     * @param array Ligne à mettre à la place index
+     */
+    public void setLigne(int index, double[] array){
+        this.table[index] = array;
+    }
     // ---------------  Getteur  -------------------- 
 
     /**
@@ -76,8 +100,7 @@ public class Matrice {
         return true;
     }
 
-    /** A FAIRE
-     * 
+    /** 
      * Multiplie this avec m pour donner une nouvelle fonction
      * @param m Matrice à multiplier avec this
      * @return true si multiplication possible, false sinon
@@ -101,13 +124,56 @@ public class Matrice {
 
     /** A FAIRE
      * 
-     * Pour trouver le determinant de la matrice
+     * Pour trouver le determinant de la matrice CARRE !
      * @return le determinant
      */
-    public double determinant(){return 0.0;}
+    public double determinantCarre(){return determinantrecursifCarre(this);}
+    
+    /**
+     * Fonction de détermination du déterminant récursive. Privée !!
+     * @param matrice matrice à trouver le determinant
+     * @return determinant actuel
+     */
+    private double determinantrecursifCarre(Matrice matrice) {
+        if(matrice.getTable().length == 2){
+            return matrice.getTable()[0][0]*matrice.getTable()[1][1] - matrice.getTable()[0][1]*matrice.getTable()[1][0];
+        }
+        else{
+            double det = 0;
+            for(int i=0 ; i<matrice.getTable().length ; i++){
+                det += Math.pow(-1, i)*matrice.getTable()[0][i] * determinantrecursifCarre(matriceReduite(matrice,i)); 
+            }
+
+            return det;
+        }
+    }
+
+    /**
+     * Méthode pour former une matrice réduite à partir de la première ligne et de i le numéro de colonne
+     * @param i numéro de colonne de la matrice à réduire
+     * @return La matrice réduite
+     */
+    private Matrice matriceReduite(Matrice matrice, int n) {
+        Matrice reduite = new Matrice(matrice.getTable().length - 1);
+
+        for(int i=1 ; i<matrice.getTable().length ; i++){
+            double[] array = new double[matrice.getTable().length-1];
+
+            for(int j=0 ; j<n ; j++){
+                array[j] = matrice.getTable()[i][j];
+            }
+
+            for(int j=n ; j<matrice.getTable().length - 1 ; j++){
+                array[j] = matrice.getTable()[i][j+1];
+            }
+
+            reduite.setLigne(i-1, array);
+        }
+
+        return reduite;
+    }
 
     // ---------------  Overrides --------------------
- 
     @Override
     public String toString() {
         String texte = "[ ";
