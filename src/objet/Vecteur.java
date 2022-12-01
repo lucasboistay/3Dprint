@@ -20,10 +20,25 @@ public abstract class Vecteur {
 
     // Maths
 
-    public abstract void addVecteur(Vecteur v);
+    /**
+     * Renvoie un vecteur égal à l'addition entre this et v
+     * @param v vecteur v de meme taille que this
+     * @return addition des deux vecteur
+     */
+    public abstract Vecteur addVecteur(Vecteur v);
 
+    /**
+     * Renvoie un vecteur égal au produit scalaire entre this et v
+     * @param v vecteur v de meme taille que this
+     * @return valeur du scalaire des deux vecteur
+     */
     public abstract double dotProduct(Vecteur v);
 
+    /**
+     * Renvoie un vecteur égal au produit vectoriel entre this et v
+     * @param v vecteur v de meme taille que this
+     * @return vectoriel des deux vecteur
+     */
     public abstract Vecteur crossProduct(Vecteur v);
 
     //toString

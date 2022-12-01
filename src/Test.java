@@ -94,7 +94,13 @@ public class Test {
 
         System.out.println("\n\nTest Vecteur : ");
 
-        Vecteur3D v1 = new Vecteur3D(2.234, 1, 3);
+        Vecteur3D v1 = new Vecteur3D(2, 1, 3);
         System.out.println(v1);
+        Vecteur3D v2 = new Vecteur3D(0, 7, 2);
+        System.out.println(v2);
+
+        System.out.println("Addition v1 et v2 : " + v1.addVecteur(v2));
+        System.out.println("DotProduct v1 et v2 : " + v1.dotProduct(v2));
+        System.out.println("CrossProduct v1 et v2 : " + v1.crossProduct(v2));
     }
 }    
