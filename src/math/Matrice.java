@@ -122,7 +122,7 @@ public class Matrice {
         return true;
     }
 
-    /** A FAIRE
+    /**
      * 
      * Pour trouver le determinant de la matrice CARRE !
      * @return le determinant

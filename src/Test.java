@@ -91,5 +91,10 @@ public class Test {
         System.out.println(m01.determinantCarre());
         System.out.println(m02.determinantCarre());
         System.out.println(m03.determinantCarre());
+
+        System.out.println("\n\nTest Vecteur : ");
+
+        Vecteur3D v1 = new Vecteur3D(2.234, 1, 3);
+        System.out.println(v1);
     }
 }    
