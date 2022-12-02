@@ -59,6 +59,17 @@ public class Test {
         m2.additionMatrice(m3);
         System.out.println("M2 : " + m2);
 
+        Matrice mAlea1 = new Matrice(3);
+        Matrice mAlea2 = new Matrice(3);
+
+        mAlea1.setAleaInt(-10, 10);
+        System.out.println("MAlea1 : " + mAlea1);
+        mAlea2.setAleaInt(-10, 10);
+        System.out.println("MAlea2 : " + mAlea2);
+
+        System.out.println("MAlea2*MAlea1 : " + mAlea1.multiplicationMatrice(mAlea2));
+
+
         // M2 pas modifié car pas d'addition possible
 
         System.out.println("Affichage Multiplication m3 et m2 : ");

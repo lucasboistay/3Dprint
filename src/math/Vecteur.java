@@ -1,21 +1,27 @@
 package math;
 
-public abstract class Vecteur {
-    private double[] coordonnee;
+public abstract class Vecteur extends Matrice{
 
     Vecteur(int n){
-        coordonnee = new double[n];
+        super(n, 1);
     }
 
     // Getteur
     public double[] getCoordonnee() {
+        double[] coordonnee = new double[3];
+        double[][] table = super.getTable();
+        for (int i=0 ; i<table.length ; i++){
+            coordonnee[i] = table[i][0];
+        }
         return coordonnee;
     }
 
     // Setteur
 
     public void setCoordonnee(double[] coordonnee) {
-        this.coordonnee = coordonnee;
+        for (int i=0 ; i<coordonnee.length ; i++){
+            this.setTable(i,0,coordonnee[i]);
+        }
     }
 
     // Maths
@@ -46,18 +52,21 @@ public abstract class Vecteur {
     }
 
     public void normaliser(){
-        //TODO
+        double[] table = this.getCoordonnee();
+        double[] newtable = new double[table.length];
+
+        double norme = this.norme();
+
+        for(int i=0 ; i<table.length ; i++){
+            newtable[i] = table[i]/norme;
+        }
+        this.setCoordonnee(newtable);
     }
+
     //toString
     @Override
     public String toString() {
-        String texte = "Vecteur[";
-
-        for(double x : coordonnee){
-            texte += Math.round(x*10.0)/10.0 + ",";
-        }
-
-        return texte + "]";
+        return "Vecteur : " + super.toString();
     }
 
     public abstract Vecteur copy();

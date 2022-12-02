@@ -73,7 +73,28 @@ public class Vecteur3D extends Vecteur{
 
     @Override
     public Vecteur copy() {
-        // TODO Auto-generated method stub
+        //TODO faire fonction copy
         return null;
     }
+
+    @Override 
+    public Vecteur3D multiplicationMatrice(Matrice m) {
+        if(this.table.length != m.getTable()[0].length){
+            return null;
+        }
+
+        Vecteur3D matriceMulti = new Vecteur3D();
+
+        for (int i=0 ; i<m.getTable().length ; i++){
+            for (int j=0 ; j<this.table[0].length ; j++){
+                double total = 0;
+                for (int k=0 ; k<m.getTable()[0].length ; k++ ){
+                    total += m.getTable()[i][k] * this.table[k][j];
+                }
+                matriceMulti.setTable(i, j, total);
+            }
+        }
+        return matriceMulti;
+    }
+
 }

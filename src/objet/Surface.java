@@ -1,6 +1,8 @@
 package objet;
 
 import java.util.ArrayList;
+
+import math.Point3D;
 import math.Vecteur3D;
 
 public class Surface {
@@ -29,6 +31,11 @@ public class Surface {
     }
 
     //Setteur
+    /**
+     * Ajoute un point dans la surface
+     * Attention, pas de test si le point ne fait pas partie de la surface (si déjà 3 points présents) !!
+     * @param p
+     */
     public void ajoutePoint(Point3D p){
         this.listePoint.add(p);
     }
@@ -36,6 +43,8 @@ public class Surface {
     public void setVecteurNormal(Vecteur3D vecteurNormal) {
         this.vecteurNormal = vecteurNormal;
     }
+
+    //TODO Fonction appliquer matrice à une surface
 
     /**
      * Permet de calculer le vecteur normal à cette surface
@@ -51,7 +60,7 @@ public class Surface {
 
         Vecteur3D vNormal = ab.crossProduct(cb);
         this.vecteurNormal = vNormal;
-        //TODO Vecteur non unitaire ! 
+        this.vecteurNormal.normaliser();
 
     }
 

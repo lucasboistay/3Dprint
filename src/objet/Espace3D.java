@@ -2,6 +2,7 @@ package objet;
 
 import java.util.ArrayList;
 import math.Matrice;
+import math.Point3D;
 import math.Vecteur3D;
 
 public class Espace3D {

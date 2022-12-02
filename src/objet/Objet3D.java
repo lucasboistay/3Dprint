@@ -22,6 +22,8 @@ public class Objet3D {
     public void addSurface(Surface s){
         listSurface.add(s);
     }
+
+    //TODO Fonction appliquer matrice à un objet
     
     //To String
     @Override
