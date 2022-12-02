@@ -1,24 +1,18 @@
 package objet;
 
 import java.util.ArrayList;
-import math.Matrice;
 import math.Point3D;
 import math.Vecteur3D;
 
 public class Espace3D {
-    private static ArrayList<Objet3D> listeObjet;
-    private static ArrayList<Vecteur3D> listeVecteur;
-    private static ArrayList<Point3D> listePoint;
-
-    private static Matrice pov;
-
-    public static final Espace3D INSTANCE = new Espace3D();
-
+    private ArrayList<Objet3D> listeObjet;
+    private ArrayList<Vecteur3D> listeVecteur;
+    private ArrayList<Point3D> listePoint;
 
     /**
      * Constructeur privé, singleton
      */
-    private Espace3D(){
+    public Espace3D(){
         listeObjet = new ArrayList<>();
         listeVecteur = new ArrayList<>();
         listePoint = new ArrayList<>();
@@ -26,39 +20,32 @@ public class Espace3D {
 
     // Getteur
 
-    public static ArrayList<Objet3D> getListeObjet() {
+    public ArrayList<Objet3D> getListeObjet() {
         return listeObjet;
     }
 
-    public static ArrayList<Point3D> getListePoint() {
+    public ArrayList<Point3D> getListePoint() {
         return listePoint;
     }
 
-    public static ArrayList<Vecteur3D> getListeVecteur() {
+    public ArrayList<Vecteur3D> getListeVecteur() {
         return listeVecteur;
     }
 
-    public static Matrice getPov() {
-        return pov;
-    }
 
     // Setteur
 
-    public static void addObjet(Objet3D o){
+    public void addObjet(Objet3D o){
         listeObjet.add(o);
     }
 
-    public static void addVecteur(Vecteur3D v){
+    public void addVecteur(Vecteur3D v){
         listeVecteur.add(v);
     } 
 
-    public static void addPoint(Point3D p){
+    public void addPoint(Point3D p){
         listePoint.add(p);
     } 
-
-    public static void setPov(Matrice pov) {
-        Espace3D.pov = pov;
-    }
 
 
     // To string

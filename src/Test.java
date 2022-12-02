@@ -173,8 +173,8 @@ public class Test {
         cube.addSurface(sHaut);
         cube.addSurface(sBas);
 
-        Espace3D espace = Espace3D.INSTANCE;
-        Espace3D.addObjet(cube);
+        Espace3D espace = new Espace3D();
+        espace.addObjet(cube);
 
         System.out.println(espace);
         
