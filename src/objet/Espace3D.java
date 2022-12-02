@@ -1,12 +1,15 @@
 package objet;
 
 import java.util.ArrayList;
+import math.Matrice;
 import math.Vecteur3D;
 
 public class Espace3D {
     private static ArrayList<Objet3D> listeObjet;
     private static ArrayList<Vecteur3D> listeVecteur;
     private static ArrayList<Point3D> listePoint;
+
+    private static Matrice pov;
 
     public static final Espace3D INSTANCE = new Espace3D();
 
@@ -34,6 +37,10 @@ public class Espace3D {
         return listeVecteur;
     }
 
+    public static Matrice getPov() {
+        return pov;
+    }
+
     // Setteur
 
     public static void addObjet(Objet3D o){
@@ -47,6 +54,10 @@ public class Espace3D {
     public static void addPoint(Point3D p){
         listePoint.add(p);
     } 
+
+    public static void setPov(Matrice pov) {
+        Espace3D.pov = pov;
+    }
 
 
     // To string
