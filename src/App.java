@@ -17,15 +17,15 @@ public class App {
 
         System.out.println("\n\nTest Objet: ");
 
-        Point3D p000 = new Point3D(0, 0, 0);
-        Point3D p001 = new Point3D(0, 0, 1);
-        Point3D p010 = new Point3D(0, 1, 0);
-        Point3D p011 = new Point3D(0, 1, 1);
+        Point3D p000 = new Point3D(-0.5, -0.5, -0.5);
+        Point3D p001 = new Point3D(-0.5, -0.5, 0.5);
+        Point3D p010 = new Point3D(-0.5, 0.5, -0.5);
+        Point3D p011 = new Point3D(-0.5, 0.5, 0.5);
 
-        Point3D p100 = new Point3D(1, 0, 0);
-        Point3D p101 = new Point3D(1, 0, 1);
-        Point3D p110 = new Point3D(1, 1, 0);
-        Point3D p111 = new Point3D(1, 1, 1);
+        Point3D p100 = new Point3D(0.5, -0.5, -0.5);
+        Point3D p101 = new Point3D(0.5, -0.5, 0.5);
+        Point3D p110 = new Point3D(0.5, 0.5, -0.5);
+        Point3D p111 = new Point3D(0.5, 0.5, 0.5);
 
         Espace3D espace = new Espace3D();
 

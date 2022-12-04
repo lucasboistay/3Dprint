@@ -11,11 +11,11 @@ public class Affichage {
 
     public static Scanner scan = new Scanner(System.in);
 
-    private static final double K1 = 100; // Distance entre l'écran et le spectateur
-    private static final double K2 = 3; // Permet de déplacer l'espace à l'avant du spectateur (si les objets sont situé en 0 par exemple)
+    private static final double K1 = 150; // Distance entre l'écran et le spectateur
+    private static final double K2 = 2; // Permet de déplacer l'espace à l'avant du spectateur (si les objets sont situé en 0 par exemple)
 
     private static final int HEIGHT_ECRAN = 150;
-    private static final int WIDTH_ECRAN = 200;
+    private static final int WIDTH_ECRAN = 150;
 
     private static String[][] ecran = new String[HEIGHT_ECRAN][WIDTH_ECRAN];
 
