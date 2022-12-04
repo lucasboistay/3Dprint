@@ -6,7 +6,7 @@ import java.util.concurrent.TimeUnit;
 
 public class App {
     public static void main(String[] args) throws Exception {
-        double angle = 15;
+        double angle = 5;
         Matrice mX = MatriceRotation3D.rotaX(angle);
         Matrice mY = MatriceRotation3D.rotaY(angle);
         Matrice mZ = MatriceRotation3D.rotaZ(angle);
@@ -51,7 +51,7 @@ public class App {
             espace.appliquerMatricePoint(mX);
 
             Affichage.affiche();
-            TimeUnit.MILLISECONDS.sleep((int) 1/24 * 1000);
+            TimeUnit.MILLISECONDS.sleep(10);
         }
     }
 }

@@ -41,8 +41,7 @@ public class Affichage {
      * Affiche sur le terminal l'espace actuel, depuis le POV
      */
     public static void affiche(){
-        System.out.print("\033\143");
-
+    
         ArrayList<Point3D> listePoint = espace.getAllPoints(); // récupère tout les points de l'espace
 
         for(int i=0 ; i<HEIGHT_ECRAN ; i++){ // Met un vide sur tout les caractère de l'écrans.
@@ -56,13 +55,15 @@ public class Affichage {
         }   
 
         String affichage = "";
-        for(String[] i : ecran){ // Affiche l'écran
+        for(String[] i : ecran){ // Stock les valeurs dans affichage
             for(String c : i){
                 affichage += c;
             }
             affichage += "\n";
         }
-        System.out.println(affichage);
+
+        System.out.print("\033\143"); // Clear l'écran
+        System.out.println(affichage); // Affiche l'écran
 
 
     }
