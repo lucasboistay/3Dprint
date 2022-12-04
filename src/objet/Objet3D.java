@@ -2,6 +2,9 @@ package objet;
 
 import java.util.ArrayList;
 
+import math.Point3D;
+import math.Matrice;
+
 public class Objet3D {
     private String nom;
     private ArrayList<Surface> listSurface;
@@ -23,7 +26,13 @@ public class Objet3D {
         listSurface.add(s);
     }
 
-    //TODO Fonction appliquer matrice à un objet
+    public void appliquerMatrice(Matrice m){
+        for(Surface s : listSurface){
+            s.appliquerMatrice(m);
+        }
+    }
+
+    //TODO Fonction barycentre
     
     //To String
     @Override

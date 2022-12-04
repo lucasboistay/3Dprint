@@ -4,6 +4,7 @@ import java.util.ArrayList;
 
 import math.Point3D;
 import math.Vecteur3D;
+import math.Matrice;
 
 public class Surface {
     private ArrayList<Point3D> listePoint;
@@ -45,6 +46,11 @@ public class Surface {
     }
 
     //TODO Fonction appliquer matrice à une surface
+    public void appliquerMatrice(Matrice m){
+        for(int i=0 ; i<listePoint.size() ; i++){
+            listePoint.set(i, listePoint.get(i).multiplicationMatrice(m));
+        }
+    }
 
     /**
      * Permet de calculer le vecteur normal à cette surface
