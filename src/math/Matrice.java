@@ -3,9 +3,19 @@ package math;
 public class Matrice {
     public double[][] table;
 
+    /**
+     * Constructeur d'une matrice x y
+     * @param x Nombres de lignes
+     * @param y Nombres de colonnes
+     */
     public Matrice(int x, int y){
         this.table = new double[x][y];
     }
+
+    /**
+     * Constructeur d'une matrice carré de taille x
+     * @param x taille de la matrice carré
+     */
     public Matrice(int x){
         this(x,x);
     }
@@ -20,6 +30,10 @@ public class Matrice {
      */
     public void setTable(int x, int y, double value){
         table[x][y] = value;
+    }
+
+    public void setTable(double[][] tableau){
+        this.table = tableau;
     }
 
     /**
@@ -101,28 +115,30 @@ public class Matrice {
     }
 
     /** 
-     * Multiplie this avec m pour donner une nouvelle fonction
+     * Multiplie m avec this pour donner une nouvelle matrice
      * @param m Matrice à multiplier avec this
-     * @return true si multiplication possible, false sinon
+     * @return Nouvelle matrice = M*THIS
      */
-    public boolean multiplicationMatrice(Matrice m){
-        if(this.table[0].length != m.getTable().length){
-            return false;
+    public Matrice multiplicationMatrice(Matrice m){
+        if(this.table.length != m.getTable()[0].length){
+            return null;
         }
 
-        for (int i=0 ; i<this.table.length ; i++){
-            for (int j=0 ; j<m.getTable()[0].length ; j++){
+        Matrice matriceMulti = new Matrice(m.getTable().length, this.table[0].length);
+
+        for (int i=0 ; i<m.getTable().length ; i++){
+            for (int j=0 ; j<this.table[0].length ; j++){
                 double total = 0;
-                for (int k=0 ; k<table[0].length ; k++ ){
-                    total += table[i][k] * m.getTable()[k][j];
+                for (int k=0 ; k<m.getTable()[0].length ; k++ ){
+                    total += m.getTable()[i][k] * this.table[k][j];
                 }
-                this.setTable(i, j, total);
+                matriceMulti.setTable(i, j, total);
             }
         }
-        return true;
+        return matriceMulti;
     }
 
-    /** A FAIRE
+    /**
      * 
      * Pour trouver le determinant de la matrice CARRE !
      * @return le determinant
@@ -183,7 +199,7 @@ public class Matrice {
                 texte += "  ";
             }
             for(int j=0 ; j<table[0].length ; j++){
-                texte += Math.round(table[i][j]*10.0)/10.0 + " , ";
+                texte += Math.round(table[i][j]*100.0)/100.0 + " , ";
             }
             texte += "\n";
         }
