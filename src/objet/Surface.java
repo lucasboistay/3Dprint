@@ -45,11 +45,23 @@ public class Surface {
         this.vecteurNormal = vecteurNormal;
     }
 
-    //TODO Fonction appliquer matrice à une surface
     public void appliquerMatrice(Matrice m){
         for(int i=0 ; i<listePoint.size() ; i++){
             listePoint.set(i, listePoint.get(i).multiplicationMatrice(m));
         }
+    }
+
+    /**
+     * Renvoie une arraylist rempli de point qui sont sur cette surface
+     * @param nbParLigne Nombre de point à récupéré au carré
+     * @return ArrayList de point
+     */
+    public ArrayList<Point3D> getPointsSurface(int nbParLigne){
+        ArrayList<Point3D> listePointSurSurface = new ArrayList<>();
+
+        //TODO getPointsSurface
+
+        return listePointSurSurface;
     }
 
     /**

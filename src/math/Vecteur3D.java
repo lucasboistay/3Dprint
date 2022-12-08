@@ -71,12 +71,6 @@ public class Vecteur3D extends Vecteur{
         return resultat;
     }
 
-    @Override
-    public Vecteur copy() {
-        //TODO faire fonction copy
-        return null;
-    }
-
     @Override 
     public Vecteur3D multiplicationMatrice(Matrice m) {
         if(this.table.length != m.getTable()[0].length){

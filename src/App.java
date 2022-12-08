@@ -49,9 +49,12 @@ public class App {
 
         for(int i=0 ; i<100 ; i++){
             espace.appliquerMatricePoint(mX);
+            espace.appliquerMatricePoint(mY);
 
             Affichage.affiche();
-            TimeUnit.MILLISECONDS.sleep(10);
+            TimeUnit.MILLISECONDS.sleep(30);
+
+            System.out.println("\n\n\n\n\n\n");
         }
     }
 }
