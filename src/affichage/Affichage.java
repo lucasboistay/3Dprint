@@ -14,7 +14,7 @@ public class Affichage {
     private static final double K1 = 50; // Distance entre l'écran et le spectateur
     private static final double K2 = 2; // Permet de déplacer l'espace à l'avant du spectateur (si les objets sont situé en 0 par exemple)
 
-    private static final int HEIGHT_ECRAN = 100;
+    private static final int HEIGHT_ECRAN = 150;
     private static final int WIDTH_ECRAN = 3*HEIGHT_ECRAN; // Car la hauteur dans le terminal est environ 3x plus grande que la largeur
 
     private static final int AGRANDISSEMENT = 2;
@@ -76,16 +76,16 @@ public class Affichage {
         double z = p.getZ();
 
         double newx = WIDTH_ECRAN/4;
-        double newy = HEIGHT_ECRAN/2; 
+        double newy = HEIGHT_ECRAN/2; // Centrer sur écran
 
-        newx += AGRANDISSEMENT*(x*K1)/(z+K2); // Projetter sur l'écran et le centrer
+        newx += AGRANDISSEMENT*(x*K1)/(z+K2); // Projetter sur l'écran et agrandir
         newy += AGRANDISSEMENT*(y*K1)/(z+K2);
 
         int newxint = (int) newx;
         int newyint = (int) newy;
 
         if(newxint < WIDTH_ECRAN/2 && newxint > 0 && newyint < HEIGHT_ECRAN && newyint > 0){
-            ecran[newxint*2 + (WIDTH_ECRAN+1) * newyint] = '@';
+            ecran[newxint*2 + newyint*(WIDTH_ECRAN+1)] = '@';
         }
     }
 
