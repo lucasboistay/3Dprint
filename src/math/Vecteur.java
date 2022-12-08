@@ -69,6 +69,4 @@ public abstract class Vecteur extends Matrice{
         return "Vecteur : " + super.toString();
     }
 
-    public abstract Vecteur copy();
-
 }

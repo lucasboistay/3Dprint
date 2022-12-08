@@ -23,9 +23,11 @@ javac -cp src -d bin src/App.java
 java -cp bin App
 ```
 
+Dézoomer le terminal pour une visualisation optimale.
+
 ## Améliorations : 
 
-- Améliorer la vitesse de rendu. En effet, la rotation est rapide à faire mais l'affichage est trop long (axe : faire une char[] static qui se modifie lorsqu'un point bouge).
+- Voir comment clear l'écran sans affecter les performances
 - Ajouter la gestion des surface
 - Gérer la lumière
 - Pouvoir mettre l'écran avec un angle
