@@ -26,4 +26,7 @@ java -cp bin App
 ## Améliorations : 
 
 - Améliorer la vitesse de rendu. En effet, la rotation est rapide à faire mais l'affichage est trop long (axe : faire une char[] static qui se modifie lorsqu'un point bouge).
-- Ajouter les méthodes TODO.
+- Ajouter la gestion des surface
+- Gérer la lumière
+- Pouvoir mettre l'écran avec un angle
+- Pouvoir déplacer les objets
