@@ -37,14 +37,29 @@ public class Surface {
      * Attention, pas de test si le point ne fait pas partie de la surface (si déjà 3 points présents) !!
      * @param p
      */
-    public void ajoutePoint(Point3D p){
-        this.listePoint.add(p);
+    public void ajoutePoint(Point3D p) throws MoreThan3PException{
+        if(listePoint.size()<3){
+            if(!listePoint.contains(p)){
+                this.listePoint.add(p);
+            }
+        }
+        else{
+            throw new MoreThan3PException();
+        }
     }
 
+    /**
+     * Setteur du vecteur normal
+     * @param vecteurNormal
+     */
     public void setVecteurNormal(Vecteur3D vecteurNormal) {
         this.vecteurNormal = vecteurNormal;
     }
 
+    /**
+     * Permet d'appliquer la matrice m à tout les points de la surface
+     * @param m
+     */
     public void appliquerMatrice(Matrice m){
         for(int i=0 ; i<listePoint.size() ; i++){
             listePoint.set(i, listePoint.get(i).multiplicationMatrice(m));
