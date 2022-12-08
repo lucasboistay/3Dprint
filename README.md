@@ -7,6 +7,8 @@ Un projet pour afficher dans le terminal un objet 3D qui tourne, en ASCII
 Projection d'un espace 3D sur un plan (écran d'affichage).
 Matrices de rotation sur des objets.
 
+![](https://github.com/Rockinfox91/3Dprint/Animation.gif)
+
 ## Installation :
 
 ```sh
